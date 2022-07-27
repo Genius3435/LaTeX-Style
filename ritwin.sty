@@ -54,6 +54,7 @@
 \newif\ifevansetup\evansetuptrue
 \newif\ifevanthm\evanthmtrue
 \newif\ifevansecthm\evansecthmfalse
+\newif\ifevanchapthm\evanchapthmfalse
 \newif\ifevanht\evanhtfalse
 \newif\ifevanpkg\evanpkgtrue
 \newif\ifevanpdf\evanpdftrue
@@ -86,6 +87,8 @@
 \DeclareOption{nothm}{\evanthmfalse}
 \DeclareOption{secthm}{\evansecthmtrue}
 \DeclareOption{nosecthm}{\evansecthmfalse}
+\DeclareOption{chapthm}{\evanchapthmtrue}
+\DeclareOption{nochapthm}{\evanchapthmfalse}
 
 \DeclareOption{ht}{\evanhttrue}
 \DeclareOption{nopdf}{\evanpdffalse}
@@ -463,13 +466,18 @@
 		\theoremstyle{definition}
 		%Branching here: the option secthm changes theorems to be labelled by section
 		\ifevanmdthm
-			\ifevansecthm
-				\declaretheorem[%
-				style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
-			\else
-				\declaretheorem[%
-				style=thmbluebox,name=Theorem]{theorem}
-			\fi
+            \ifevanchapthm
+                \declaretheorem[%
+                style=thmbluebox,name=Theorem,numberwithin=chapter]{theorem}
+            \else
+                \ifevansecthm
+                    \declaretheorem[%
+                    style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
+                \else
+                    \declaretheorem[%
+                    style=thmbluebox,name=Theorem]{theorem}
+                \fi
+            \fi
 			\declaretheorem[style=thmbluebox,name=Lemma,sibling=theorem]{lemma}
 			\declaretheorem[style=thmbluebox,name=Note,sibling=theorem,numbered=no]{note}
 			\declaretheorem[style=thmbluebox,name=Proposition,sibling=theorem]{proposition}
