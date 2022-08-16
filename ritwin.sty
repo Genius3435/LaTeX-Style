@@ -402,6 +402,26 @@
 			postheadspace={0pt},
 		]{thmredbox}
 
+		\mdfdefinestyle{mdpurplebox}{%
+			linewidth=0.5pt,
+			skipabove=12pt,
+			frametitleaboveskip=5pt,
+			frametitlebelowskip=0pt,
+			skipbelow=2pt,
+			frametitlefont=\bfseries,
+			innertopmargin=4pt,
+			innerbottommargin=8pt,
+			nobreak=true,
+			backgroundcolor=Purple!5,
+			linecolor=Purple,
+		}
+		\declaretheoremstyle[
+			headfont=\bfseries\color{Purple},
+			mdframed={style=mdpurplebox},
+			headpunct={\\[3pt]},
+			postheadspace={0pt},
+		]{thmpurplebox}
+
 		\mdfdefinestyle{mdbluebox}{%
 			skipabove=8pt,
 			linewidth=2pt,
@@ -538,8 +558,8 @@
 		\declaretheorem[name=Exercise,numbered=no]{exercise*}
 		\declaretheorem[name=Fact,sibling=theorem]{fact}
 		\declaretheorem[name=Fact,numbered=no]{fact*}
-		\declaretheorem[name=Problem,style=thmredbox,sibling=theorem]{problem}
-		\declaretheorem[name=Problem,style=thmredbox,numbered=no]{problem*}
+		\declaretheorem[name=Problem,style=thmpurplebox,sibling=theorem]{problem}
+		\declaretheorem[name=Problem,style=thmpurplebox,numbered=no]{problem*}
 		\declaretheorem[name=Solution,style=thmblackbox,sibling=theorem,numbered=no]{solution}
 		\declaretheorem[name=Question,sibling=theorem]{ques}
 		\declaretheorem[name=Question,numbered=no]{ques*}
