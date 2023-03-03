@@ -337,7 +337,7 @@
 	%%fakesection Set up author and date
 	\ifevanauthor
 		\title{} % empty title to avoid crashes
-		\author{Evan Chen}
+		\author{Ritwin Narra}
 		\date{\today}
 	\fi
 	%%fakesection Hyperref
@@ -429,16 +429,16 @@
 			leftline=true,
 			topline=false,
 			bottomline=false,
-			linecolor=blue,
+			linecolor=RoyalBlue,
 			nobreak=true,
-			backgroundcolor=TealBlue!5,
+			backgroundcolor=Cyan!5,
 		}
 		\declaretheoremstyle[
-			headfont=\sffamily\bfseries\color{MidnightBlue},
+			headfont=\sffamily\bfseries\color{RoyalBlue},
 			spaceabove=2pt,
 			spacebelow=1pt,
 			mdframed={style=mdbluebox},
-			headpunct={ --- },
+			headpunct={. },
 		]{thmbluebox}
 
 		\mdfdefinestyle{mdgreenbox}{%
@@ -457,7 +457,7 @@
 			spaceabove=2pt,
 			spacebelow=1pt,
 			mdframed={style=mdgreenbox},
-			headpunct={ --- },
+			headpunct={. },
 		]{thmgreenbox}
 
 		\mdfdefinestyle{mdblackbox}{%
@@ -601,6 +601,8 @@
 	\ifevanpkg
 		\ifevanvonenabled
 			\IfFileExists{von.sty}{\usepackage{von}}{}
+			\IfFileExists{../von.sty}{\usepackage{../von}}{}
+			\IfFileExists{../../von.sty}{\usepackage{../../von}}{}
 		\fi
 		\usepackage{listings}
 		\usepackage{mathrsfs}
@@ -685,7 +687,7 @@
 				\renewcommand{\headrulewidth}{0.5pt}
 				\renewcommand{\footrulewidth}{0.0pt}
 				\pagestyle{fancy}
-				\lhead{Evan Chen}
+				\lhead{Ritwin Narra}
 				\chead{}
 				\rhead{\nouppercase{\leftmark}}
 				\lfoot{}
